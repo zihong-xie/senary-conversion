@@ -26,7 +26,7 @@ def sen_to_dec(senary_string : str) -> int: # base-6 -> base-10
         is_negative = True
 
     if _check_base6_num(senary_string) == False:
-        raise ValueError("Is not a senary number")
+        raise ValueError(f"{senary_string} is not a senary number")
     
     result : int = 0
     for i, c in enumerate(reversed(senary_string)):
