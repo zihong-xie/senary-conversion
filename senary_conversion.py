@@ -20,6 +20,9 @@ def dec_to_sen(decimal_number : int) -> str: # base-10 -> base-6
     return base6_num
 
 def sen_to_dec(senary_string : str) -> int: # base-6 -> base-10
+    if len(senary_string) == 0:
+        return 0
+    
     is_negative : bool = False
     if senary_string[0] == '-':
         senary_string = senary_string[1:]
@@ -38,8 +41,6 @@ def sen_to_dec(senary_string : str) -> int: # base-6 -> base-10
     return result
 
 def _check_base6_num(base6_str : str) -> bool:
-    if len(base6_str) == 0:
-        return False
     base6 : list[str] = list('012345')
     for c in base6_str:
         if c not in base6:
